@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  background-color: #282a36;
+}
+.form-control {
+  border-color: #bd93f9;
+  color: #f8f8f2;
+  background-color: #6272a4;
+}
+.form-control:hover {
+  border-color: #bd93f9;
+  background-color: #6272a4;
+  box-shadow: none;
+}
+.form-control:focus {
+  border-color: #bd93f9;
+  box-shadow: none;
+  background-color: #6272a4;
+  color: #f8f8f2;
+}
+.form-control::placeholder {
+  color: #f8f8f2;
+}
