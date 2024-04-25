@@ -21,3 +21,7 @@ body {
 .form-control::placeholder {
   color: #f8f8f2;
 }
+a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+}

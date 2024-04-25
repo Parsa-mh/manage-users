@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/search.css";
-const Search = ({ theme }) => {
+const Search = ({ theme, searching, finding }) => {
   return (
     <div className="flex-grow-1">
       <div className="input-group align-content-center w-auto">
@@ -17,6 +17,7 @@ const Search = ({ theme }) => {
           />
         </span>
         <input
+          onChange={searching}
           type="text"
           className="form-control"
           placeholder="جستجوی مخاطب"

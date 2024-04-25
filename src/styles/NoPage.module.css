@@ -1,0 +1,26 @@
+.main {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -50px;
+}
+.main h2 {
+  display: inline;
+}
+.link {
+  text-decoration: none;
+  color: #50fa7b;
+}
+.link:hover {
+  color: #8be9fd;
+  text-decoration: underline;
+}
+.link:active {
+  color: #8be9fd;
+}
+.image {
+  width: 75%;
+}
