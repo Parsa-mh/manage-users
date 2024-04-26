@@ -1,11 +1,11 @@
 import React from "react";
 import Search from "./search";
 
-const Nav = ({ colors, searching, finding }) => {
+const Nav = ({ colors, searching }) => {
   return (
     <nav className="navbar navbar-dark navbar-expand-sm w-100 shadow-lg mb-2">
       <div className="d-flex flex-row justify-content-around w-100 align-items-center container">
-        <Search theme={colors} searching={searching} finding={finding} />
+        <Search theme={colors} searching={searching} />
         <div
           className="logo-mtn d-flex flex-row align-items-center navbar-brand flex-grow-1"
           dir="rtl"

@@ -5,7 +5,7 @@ import colors from "../helpers/theme";
 import profile from "../assets/man-taking-note.png";
 const AddContact = ({ setContacts,contacts }) => {
     const navigate = useNavigate()
-    const [inpValue, setInpValue] = useState({ name: "", number: "", email: "", image: { profile } })
+    const [inpValue, setInpValue] = useState({ name: "", number: "", email: "", image: { profile },id : contacts.length + 1 })
     const setValue = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -18,7 +18,7 @@ const AddContact = ({ setContacts,contacts }) => {
             navigate("/")
         }
         else {
-            toast.error(" لطفا فیلد را پر نمایید", {
+            toast.error(" لطفا فیلد ها را پر نمایید", {
                 duration: 2500,
                 iconTheme: {
                     primary: "red",

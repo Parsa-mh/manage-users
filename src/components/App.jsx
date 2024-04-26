@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useSearchParams, Routes, Route, Navigate } from "react-router-dom";
+import { useSearchParams, Routes, Route, Navigate,useNavigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import colors from "../helpers/theme";
@@ -10,19 +10,21 @@ import EditContact from "./EditContact";
 import profile from "../assets/man-taking-note.png";
 import NoPage from "./PageNotFound";
 const App = () => {
+  const navigate = useNavigate()
   const [search, setSearch] = useSearchParams();
-  const [loading, setLoading] = useState(false);
   const [contacts, setContacts] = useState([
     {
       name: "پارسا محمودی خالدی",
       number: "09212445350",
       image: { profile },
+      id : 1,
       email: "mahmoodiparsa654@gmail.com",
     },
     {
       name: "علیرضا ناصری",
       number: "09120084871",
       image: { profile },
+      id : 2,
       email: "motavalian86@gmail.com",
     },
   ]);
@@ -44,7 +46,8 @@ const App = () => {
       denyButtonText: "حذف",
     }).then((res) => {
       if (res.isDenied) {
-        setContacts(contacts.filter((item)=> item.name !== contactId))
+        setContacts(contacts.filter((item) => item.id !== Number(contactId)))
+        navigate("/")
       }
     })
   }
@@ -53,10 +56,11 @@ const App = () => {
       <Toaster />
       <Routes>
         <Route path="/" element={<Navigate to={"/contacts"} />} />
-        <Route path="/contacts" element={<Contacts handleDelete={handleDelete} searching={userSearch} colors={colors} contacts={contacts} loading={loading} Search={search} />} />
+        <Route path="/contacts" element={<Contacts handleDelete={handleDelete} searching={userSearch} colors={colors} contacts={contacts} Search={search} />} >
+          <Route path="/contacts/edit/:contactID" element={<EditContact contacts={contacts} setContacts={setContacts} />} />
+        </Route>
         <Route path="/contacts/add" element={<AddContact setContacts={setContacts} contacts={contacts} />} />
-        <Route path="/edit" element={<EditContact />} />
-        <Route path="/contacts/:contactName" element={<ViewContact contacts={contacts} handleDelete={handleDelete} />} />
+        <Route path="/contacts/view/:contactName" element={<ViewContact contacts={contacts} handleDelete={handleDelete} />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </>

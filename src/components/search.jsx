@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/search.css";
-const Search = ({ theme, searching, finding }) => {
+const Search = ({ theme, searching }) => {
   return (
     <div className="flex-grow-1">
       <div className="input-group align-content-center w-auto">

@@ -54,7 +54,7 @@ const Contact = ({ colors, data,handleDelete }) => {
         >
           <button
             className="btn my-1"
-            onClick={()=>navigate(`/contacts/${data.name}`)}
+            onClick={()=>navigate(`/contacts/view/${data.id}`)}
             style={{ backgroundColor: colors.Orange }}
           >
             <i
@@ -62,13 +62,13 @@ const Contact = ({ colors, data,handleDelete }) => {
               style={{ backgroundColor: colors.Orange }}
             />
           </button>
-          <button className="btn my-1" style={{ backgroundColor: colors.Cyan }}>
+          <button className="btn my-1" style={{ backgroundColor: colors.Cyan }} onClick={()=> navigate(`/contacts/edit/${data.id}`)}>
             <i
               className="fa fa-pen w-100 h-100"
               style={{ backgroundColor: colors.Cyan, color: "black" }}
             />
           </button>
-          <button onClick={() => handleDelete(data.name)} className="btn my-1" style={{ backgroundColor: colors.Red }}>
+          <button onClick={() => handleDelete(data.id)} className="btn my-1" style={{ backgroundColor: colors.Red }}>
             <i
               className="fa fa-trash w-100 h-100"
               style={{ backgroundColor: colors.Red }}
