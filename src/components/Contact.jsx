@@ -1,7 +1,8 @@
 import profile from "../assets/man-taking-note.png";
-import { useNavigate } from "react-router-dom"
-const Contact = ({ colors, data }) => {
+import { useNavigate } from "react-router-dom";
+const Contact = ({ colors, data,handleDelete }) => {
   const navigate = useNavigate()
+  
   return (
     <div
       className="col-md-10 col-12 col-lg-6 mx-auto d-flex flex-row align-items-center justify-content-around card"
@@ -53,6 +54,7 @@ const Contact = ({ colors, data }) => {
         >
           <button
             className="btn my-1"
+            onClick={()=>navigate(`/contacts/${data.name}`)}
             style={{ backgroundColor: colors.Orange }}
           >
             <i
@@ -66,11 +68,10 @@ const Contact = ({ colors, data }) => {
               style={{ backgroundColor: colors.Cyan, color: "black" }}
             />
           </button>
-          <button className="btn my-1" style={{ backgroundColor: colors.Red }}>
+          <button onClick={() => handleDelete(data.name)} className="btn my-1" style={{ backgroundColor: colors.Red }}>
             <i
               className="fa fa-trash w-100 h-100"
               style={{ backgroundColor: colors.Red }}
-              onClick={()=>{navigate("/error")}}
             />
           </button>
         </div>

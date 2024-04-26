@@ -3,7 +3,7 @@ import Spinner from "./spinner";
 import Add from "./AddButton";
 import Contact from "./Contact";
 import Nav from "./Navbar";
-const Contacts = ({ colors, contacts, loading, Search,searching }) => {
+const Contacts = ({ colors, contacts, loading, Search,searching,handleDelete }) => {
   return (
     <>
       <Nav colors={colors} searching={searching} />
@@ -31,7 +31,7 @@ const Contacts = ({ colors, contacts, loading, Search,searching }) => {
                         : true;
                     })
                     .map((con) => (
-                      <Contact colors={colors} data={con} key={con.name} />
+                      <Contact contacts={contacts} colors={colors} handleDelete={handleDelete} data={con} key={con.name} />
                     ))
                 ) : (
                   <NotFound colors={colors} />

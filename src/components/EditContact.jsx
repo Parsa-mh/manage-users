@@ -1,6 +1,14 @@
 const EditContact = () => {
     return (
-        <div></div>
+        <div>
+            <form>
+                <div>
+                    <input type="text" />
+                    <input type="text" />
+                    <input type="text" />
+                </div>
+            </form>
+        </div>
     )
 }
 export default EditContact;

@@ -8,7 +8,7 @@ const Add = ({ colors }) => {
         style={{ backgroundColor: colors.Pink }}
         className="btn d-flex align-items-center mx-auto"
         dir="rtl"
-        onClick={() => navigate("/add")}
+        onClick={() => navigate("/contacts/add")}
       >
         ساخت مخاطب جدید{" "}
         <span className="me-1">
