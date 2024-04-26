@@ -17,7 +17,7 @@ const Contacts = ({ colors, contacts, Search,searching,handleDelete }) => {
                   let searched = Search.get("filter");
                       return searched ? con.name.toLowerCase().startsWith(searched.toLowerCase()) : true;
                 }).length > 0 ? (
-                  contacts.filter((con) => {
+                  contacts.sort((a,b) => a.id - b.id).filter((con) => {
                       let searched = Search.get("filter");
                       return searched ? con.name.toLowerCase().startsWith(searched.toLowerCase()) : true;
                     }).map((con) => (

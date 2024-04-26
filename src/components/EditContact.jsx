@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import styles from "../styles/edit.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 import colors from "../helpers/theme";
@@ -18,11 +19,22 @@ const EditContact = ({ contacts, setContacts }) => {
     }
     const submitHandle = (event) => {
         event.preventDefault();
-        setContacts(() => {
-            const test = contacts.filter((item) => item.id !== Number(myContact.id))
-            return [...test , myContact]
-        })
-        navigate("/")
+        if (myContact.name && myContact.email && myContact.number) {
+            setContacts(() => {
+                const test = contacts.filter((item) => item.id !== Number(myContact.id))
+                return [...test , myContact]
+            })
+            navigate("/")
+        }
+        else {
+            toast.error(" لطفا فیلد ها را پر نمایید", {
+                duration: 2500,
+                iconTheme: {
+                    primary: "red",
+                    secondary : "white"
+                }
+            })
+        }
     }
     return (
         <div className={`position-fixed ${styles.burgerAttack}`}>
