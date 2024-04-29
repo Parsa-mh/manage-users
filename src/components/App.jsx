@@ -40,7 +40,6 @@ const App = () => {
       cancelButtonText : "انصراف"
     }).then((res) => {
       if (res.isDenied) {
-        setContacts(contacts.filter((item) => item.id !== Number(contactId)))
         axios.delete(url+ "/"  + contactId)
         navigate("/")
       }
