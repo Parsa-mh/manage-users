@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dbRun": "json-server --watch ./database/contacts.json"
+    "db": "json-server --watch ./database/contacts.json"
   },
   "eslintConfig": {
     "extends": [

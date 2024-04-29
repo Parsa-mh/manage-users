@@ -37,6 +37,7 @@ const App = () => {
       showDenyButton: true,
       showConfirmButton : false,
       denyButtonText: "حذف",
+      cancelButtonText : "انصراف"
     }).then((res) => {
       if (res.isDenied) {
         setContacts(contacts.filter((item) => item.id !== Number(contactId)))
