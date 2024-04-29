@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import axios from "axios";
 import styles from "../styles/edit.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 import colors from "../helpers/theme";
-const EditContact = ({ contacts, setContacts }) => {
+const EditContact = ({ url }) => {
     const param = useParams()
+    const paramId = param.contactID
+    const [myContact,setMyContact] = useState({})
+    useEffect(() => {
+        axios.get(url + "/" + paramId).then((res) => {
+            setMyContact(res.data)
+        })
+    } , [paramId,url])
     const navigate = useNavigate()
-    const findContact = () => {
-        const id = param.contactID
-        return contacts.find((contact) => contact.id === Number(id))
-    }
-    const contact = findContact();
-    const [myContact, setMyContact] = useState({ name: contact.name, email: contact.email, number: contact.number,id : contact.id })
     const myCon = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -19,14 +21,7 @@ const EditContact = ({ contacts, setContacts }) => {
     }
     const submitHandle = (event) => {
         event.preventDefault();
-        if (myContact.name && myContact.email && myContact.number) {
-            setContacts(() => {
-                const test = contacts.filter((item) => item.id !== Number(myContact.id))
-                return [...test , myContact]
-            })
-            navigate("/")
-        }
-        else {
+        if (!myContact.name || !myContact.email  || !myContact.number) {
             toast.error(" لطفا فیلد ها را پر نمایید", {
                 duration: 2500,
                 iconTheme: {
@@ -34,6 +29,16 @@ const EditContact = ({ contacts, setContacts }) => {
                     secondary : "white"
                 }
             })
+        }
+        else if(!myContact.email.includes("@")) {
+            toast.error("لطفا یک ایمیل صحیح وارد کنید")
+        }
+        else if (!myContact.number.includes("0") || myContact.number.length < 11) {
+            toast.error("لطفا یک شماره موبایل صحیح وارد کنید")
+        }
+        else {
+            axios.patch(url + '/' + myContact.id , myContact)
+            navigate("/")
         }
     }
     return (

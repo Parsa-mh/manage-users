@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import axios from "axios";
 import colors from "../helpers/theme";
 import profile from "../assets/man-taking-note.png";
-const AddContact = ({ setContacts,contacts }) => {
+const AddContact = ({ url }) => {
     const navigate = useNavigate()
-    const [inpValue, setInpValue] = useState({ name: "", number: "", email: "", image: { profile },id : contacts.length + 1 })
+    const [inpValue, setInpValue] = useState({ name: "", number: "", email: "", image: { profile }, id: new Date().getTime().toString() })
     const setValue = (event) => {
         let name = event.target.name;
         let value = event.target.value;
@@ -13,11 +14,7 @@ const AddContact = ({ setContacts,contacts }) => {
     }
     const addContacts = (event) => {
         event.preventDefault();
-        if (inpValue.name && inpValue.number && inpValue.email) {
-            setContacts([...contacts, inpValue])
-            navigate("/")
-        }
-        else {
+        if (!inpValue.name || !inpValue.number || !inpValue.email) {
             toast.error(" لطفا فیلد ها را پر نمایید", {
                 duration: 2500,
                 iconTheme: {
@@ -25,7 +22,16 @@ const AddContact = ({ setContacts,contacts }) => {
                     secondary : "white"
                 }
             })
-            
+        }
+        else if(!inpValue.email.includes("@")) {
+            toast.error("لطفا یک ایمیل صحیح وارد کنید")
+        }
+        else if (!inpValue.number.includes("0") || inpValue.number.length < 11) {
+            toast.error("لطفا یک شماره موبایل صحیح وارد کنید")
+        }
+        else {
+            axios.post(url,inpValue)
+            navigate("/")
         }
     }
     return (
