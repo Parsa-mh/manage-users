@@ -1,24 +1,6 @@
 {
   "contacts": [
     {
-      "id": "1714396115633",
-      "name": "علی انبارلو",
-      "number": "09212445350",
-      "email": "aliAnbarlou@gmail.com",
-      "image": {
-        "profile": "/static/media/man-taking-note.578e1679689f39584d15.png"
-      }
-    },
-    {
-      "id": "1714396185007",
-      "name": "کیان",
-      "number": "09019830453",
-      "email": "kian@gmail.com",
-      "image": {
-        "profile": "/static/media/man-taking-note.578e1679689f39584d15.png"
-      }
-    },
-    {
       "id": "1714396363960",
       "name": "پارسا محمودی خالدی",
       "number": "09103408632",
@@ -28,10 +10,10 @@
       }
     },
     {
-      "id": "1714397698079",
-      "name": "دانیال زارع پور",
-      "number": "09395909983",
-      "email": "danial@gmail.com",
+      "id": "1714481078234",
+      "name": "امیر علی نیازی",
+      "number": "09304661779",
+      "email": "amirniazi@gmail.com",
       "image": {
         "profile": "/static/media/man-taking-note.578e1679689f39584d15.png"
       }
