@@ -5,18 +5,14 @@
       "name": "پارسا محمودی خالدی",
       "number": "09103408632",
       "email": "mahmoodiparsa654@gmail.com",
-      "image": {
-        "profile": "/static/media/man-taking-note.578e1679689f39584d15.png"
-      }
+      "image": "/static/media/man-taking-note.578e1679689f39584d15.png"
     },
     {
       "id": "1714481078234",
-      "name": "امیر علی نیازی",
+      "name": "امیرعلی نیازی",
       "number": "09304661779",
       "email": "amirniazi@gmail.com",
-      "image": {
-        "profile": "/static/media/man-taking-note.578e1679689f39584d15.png"
-      }
+      "image": "/static/media/man-taking-note.578e1679689f39584d15.png"
     }
   ]
 }

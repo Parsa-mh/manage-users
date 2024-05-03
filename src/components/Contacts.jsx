@@ -3,33 +3,35 @@ import NotFound from "./NotFound";
 import Add from "./AddButton";
 import Contact from "./Contact";
 import Nav from "./Navbar";
-const Contacts = ({ colors, contacts, Search,searching,handleDelete }) => {
+import Loader from "./Loader";
+const Contacts = ({ contacts, Search, isLoading }) => {
   return (
     <>
       <Outlet />
-      <Nav colors={colors} searching={searching} />
+      <Nav />
       <main className="container">
-        <Add colors={colors} />
-          <section>
-            <div className="grid">
-              <div className="row g-3" dir="rtl">
-                {contacts.filter((con) => {
+        <Add />
+        <section>
+          <div className="grid">
+            <div className="row g-3" dir="rtl">
+              {isLoading ? <Loader /> :
+                contacts.filter((con) => {
                   let searched = Search.get("filter");
-                      return searched ? con.name.toLowerCase().startsWith(searched.toLowerCase()) : true;
+                  return searched ? con.name.toLowerCase().startsWith(searched.toLowerCase()) : true;
                 }).length > 0 ? (
-                  contacts.sort((a,b) => a.id - b.id).filter((con) => {
-                      let searched = Search.get("filter");
-                      return searched ? con.name.toLowerCase().startsWith(searched.toLowerCase()) : true;
-                    }).map((con) => (
-                      <Contact colors={colors} handleDelete={handleDelete} data={con} key={con.id} />
-                    ))
-                ) : <NotFound colors={colors} />}
-              </div>
+                  contacts.sort((a, b) => a.id - b.id).filter((con) => {
+                    let searched = Search.get("filter");
+                    return searched ? con.name.toLowerCase().startsWith(searched.toLowerCase()) : true;
+                  }).map((con) => (
+                    <Contact data={con} key={con.id} />
+                  ))
+                ) : <NotFound />}
             </div>
-          </section>
+          </div>
+        </section>
       </main>
     </>
-    
+
   );
 };
 export default Contacts;

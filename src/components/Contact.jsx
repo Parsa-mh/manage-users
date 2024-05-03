@@ -1,6 +1,9 @@
-import profile from "../assets/man-taking-note.png";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-const Contact = ({ colors, data,handleDelete }) => {
+import { ContactContext } from "../context/context";
+import colors from "../helpers/theme";
+const Contact = ({ data }) => {
+  const {handleDelete} = useContext(ContactContext)
   const navigate = useNavigate()
   
   return (
@@ -11,7 +14,7 @@ const Contact = ({ colors, data,handleDelete }) => {
     >
       <div className="card-body d-flex align-items-center justify-content-around">
         <div className={window.innerWidth > 450 ? "col-4" : "d-none"}>
-          <img src={profile} className="img-fluid rounded" alt="profile" />
+          <img src={data.image} className="img-fluid rounded" alt="profile" />
         </div>
         <div className={window.innerWidth > 450 ? "col-7" : "col-10"}>
           <ul className="list-group mx-auto p-0 px-2">

@@ -1,7 +1,6 @@
 import DontFound from "../assets/no-found.gif";
-
-
-const NotFound = ({colors}) => {
+import colors from "../helpers/theme";
+const NotFound = () => {
     return (
         <div
             className="text-center py-5"

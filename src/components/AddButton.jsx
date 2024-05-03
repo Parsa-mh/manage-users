@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
-const Add = ({ colors }) => {
+import colors from "../helpers/theme";
+const Add = () => {
   const navigate = useNavigate()
   return (
     <div className="mx-auto w-100 text-center mb-3">

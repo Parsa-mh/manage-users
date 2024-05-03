@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContactContext } from "../context/context";
+import colors from "../helpers/theme";
 import "../styles/search.css";
-const Search = ({ theme, searching }) => {
+const Search = () => {
+  const { searching } = useContext(ContactContext)
   return (
     <div className="flex-grow-1">
       <div className="input-group align-content-center w-auto">
         <span
           className="input-grout-text align-items-center w-auto pe-3 justify-content-center icon"
-          style={{ backgroundColor: theme.Purple }}
+          style={{ backgroundColor: colors.Purple }}
         >
           <i
             className="fa fa-search"
             style={{
               transform: "translateY(45%) translateX(50%)",
-              color: theme.Foreground,
+              color: colors.Foreground,
             }}
           />
         </span>
