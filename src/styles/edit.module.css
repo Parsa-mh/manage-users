@@ -1,19 +1,19 @@
-.burgerAttack{
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.675);
-    direction: rtl;
+.burgerAttack {
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.675);
+  direction: rtl;
 }
-.playPingPong{
-    width: 450px;
-    box-shadow: -10px 0 40px black;
-    height: 100%;
+.playPingPong {
+  width: 450px;
+  box-shadow: -10px 0 40px black;
+  height: 100%;
 }
-@media only screen and (max-width : 600px) {
-    .playPingPong{
-        width: 85%;
-    }
+@media only screen and (max-width: 600px) {
+  .playPingPong {
+    width: 85%;
+  }
 }
