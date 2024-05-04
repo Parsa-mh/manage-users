@@ -51,6 +51,7 @@ const AddContact = () => {
                     {/* <label htmlFor="image" className="text-light" dir="rtl">عکس (اختیاری) :</label>
                     <input type="file" name="image" id="image" onChange={setValue} className="form-control image" dir="rtl" /> */}
                     <button className="w-100 btn mt-4" style={{ backgroundColor: colors.Cyan }}>اضافه کردن</button>
+                    <button className="w-100 btn mt-1 text-light" type="button" onClick={() => navigate("/")} style={{ backgroundColor: colors.backGround }}>بازگشت</button>
                 </div>
             </form>
         </div>
