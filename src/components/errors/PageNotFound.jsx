@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import styles from "../styles/NoPage.module.css";
-import notFound from "../assets/no-found.gif";
-import colors from "../helpers/theme";
+import styles from "../../styles/NoPage.module.css";
+import notFound from "../../assets/no-found.gif";
+import colors from "../../helpers/theme";
 const NoPage = () => {
   const color = colors;
   return (

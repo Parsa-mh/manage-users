@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ContactContext } from "../context/context";
-import colors from "../helpers/theme";
-import "../styles/search.css";
+import { ContactContext } from "../../context/context";
+import colors from "../../helpers/theme";
+import "../../styles/search.css";
 const Search = () => {
   const { searching } = useContext(ContactContext)
   return (

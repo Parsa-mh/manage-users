@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { ContactContext } from "../context/context";
-import styles from "../styles/edit.module.css"
+import { ContactContext } from "../../context/context";
+import styles from "../../styles/edit.module.css"
 import { useNavigate, useParams } from "react-router-dom";
-import colors from "../helpers/theme";
+import colors from "../../helpers/theme";
 const EditContact = () => {
     const { url } = useContext(ContactContext)
     const param = useParams()

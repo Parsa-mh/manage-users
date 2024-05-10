@@ -2,10 +2,10 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { ContactContext } from "../context/context";
-import colors from "../helpers/theme";
-import profile from "../assets/man-taking-note.png";
-import "../styles/addContact.css";
+import { ContactContext } from "../../context/context";
+import colors from "../../helpers/theme";
+import profile from "../../assets/man-taking-note.png";
+import "../../styles/addContact.css";
 const AddContact = () => {
     const { url } = useContext(ContactContext)
     const navigate = useNavigate()

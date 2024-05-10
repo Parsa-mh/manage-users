@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./search";
-import colors from "../helpers/theme";
+import colors from "../../helpers/theme";
 const Nav = () => {
   return (
     <nav className="navbar navbar-dark navbar-expand-sm w-100 shadow-lg mb-2">

@@ -1,17 +1,13 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContactContext } from "../context/context";
-import colors from "../helpers/theme";
+import { ContactContext } from "../../context/context";
+import colors from "../../helpers/theme";
 const Contact = ({ data }) => {
-  const { handleDelete } = useContext(ContactContext)
+  const { dispatch } = useContext(ContactContext)
   const navigate = useNavigate()
 
   return (
-    <div
-      className="col-md-10 col-12 col-lg-6 mx-auto d-flex flex-row align-items-center justify-content-around card"
-      style={{ backgroundColor: colors.CurrentLine }}
-      dir="rtl"
-    >
+    <div className="col-md-10 col-12 col-lg-6 mx-auto d-flex flex-row align-items-center justify-content-around card" style={{ backgroundColor: colors.CurrentLine }} dir="rtl">
       <div className="card-body d-flex align-items-center justify-content-around">
         <div className={window.innerWidth > 450 ? "col-4" : "d-none"}>
           <img src={data.image} className="img-fluid rounded" alt="profile" />
@@ -36,7 +32,7 @@ const Contact = ({ data }) => {
           <button className="btn my-1" style={{ backgroundColor: colors.Cyan }} onClick={() => navigate(`/contacts/edit/${data.id}`)}>
             <i className="fa fa-pen w-100 h-100" style={{ backgroundColor: colors.Cyan, color: "black" }} />
           </button>
-          <button onClick={() => handleDelete(data.id)} className="btn my-1" style={{ backgroundColor: colors.Red }}>
+          <button onClick={() => dispatch({ type: "DELETE_CONTACT", payload: data.id, navigate })} className="btn my-1" style={{ backgroundColor: colors.Red }}>
             <i className="fa fa-trash w-100 h-100" style={{ backgroundColor: colors.Red }} />
           </button>
         </div>
