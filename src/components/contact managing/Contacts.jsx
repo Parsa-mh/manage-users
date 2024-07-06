@@ -7,13 +7,14 @@ import Nav from "../navbar/Navbar";
 import Contact from "./Contact";
 import Loader from "../loader/Loader";
 import colors from "../../helpers/theme";
-const Contacts = ({ contacts, Search, isLoading }) => {
+import { FaPlusCircle } from "react-icons/fa";
+const Contacts = ({ contacts, isLoading }) => {
+  const { isError, search } = useContext(ContactContext);
+  const navigate = useNavigate();
   const searchedContacts = contacts.filter((con) => {
-    let searched = Search.get("filter");
+    let searched = search.get("filter");
     return searched ? con.name.toLowerCase().includes(searched.toLowerCase()) : true;
-  })
-  const navigate = useNavigate()
-  const { isError } = useContext(ContactContext)
+  });
   return (
     <>
       <Outlet />
@@ -21,7 +22,7 @@ const Contacts = ({ contacts, Search, isLoading }) => {
       <main className="container">
         <div className="mx-auto w-100 text-center mb-3">
           <button style={{ backgroundColor: colors.Pink }} className="btn d-flex align-items-center mx-auto" dir="rtl" onClick={() => navigate("/contacts/add")}>
-            ساخت مخاطب جدید <span className="me-1"><i className="fa fa-plus-circle" /></span>
+            ساخت مخاطب جدید <span className="me-1"><FaPlusCircle /></span>
           </button>
         </div>
         <section>

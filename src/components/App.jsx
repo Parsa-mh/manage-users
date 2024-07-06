@@ -33,13 +33,14 @@ const App = () => {
       }
     
   }
+  
   return (
     <>
-      <ContactContext.Provider value={{ searching: userSearch, url, isError: state.isError, dispatch }}>
+      <ContactContext.Provider value={{ searching: userSearch, url, isError: state.isError, dispatch,search }}>
         <Toaster />
         <Routes>
           <Route path="/" element={<Navigate to={"/contacts"} />} />
-          <Route path="/contacts" element={<Contacts isLoading={state.isLoading} contacts={state.contacts} Search={search} />} >
+          <Route path="/contacts" element={<Contacts isLoading={state.isLoading} contacts={state.contacts} />} >
             <Route path="/contacts/edit/:contactID" element={<EditContact />} />
           </Route>
           <Route path="/contacts/add" element={<AddContact />} />

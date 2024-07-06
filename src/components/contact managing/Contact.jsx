@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContactContext } from "../../context/context";
+import { FaEye, FaPen,FaTrash } from "react-icons/fa";
 import colors from "../../helpers/theme";
 const Contact = ({ data }) => {
   const { dispatch } = useContext(ContactContext)
@@ -27,13 +28,13 @@ const Contact = ({ data }) => {
         </div>
         <div className={`d-flex flex-column text-center ${window.innerWidth > 450 ? "col-1" : "col-2"}`}>
           <button className="btn my-1" onClick={() => navigate(`/contacts/view/${data.id}`)} style={{ backgroundColor: colors.Orange }}>
-            <i className="fa fa-eye w-100 h-100" style={{ backgroundColor: colors.Orange }} />
+            <FaEye />
           </button>
           <button className="btn my-1" style={{ backgroundColor: colors.Cyan }} onClick={() => navigate(`/contacts/edit/${data.id}`)}>
-            <i className="fa fa-pen w-100 h-100" style={{ backgroundColor: colors.Cyan, color: "black" }} />
+            <FaPen />
           </button>
           <button onClick={() => dispatch({ type: "DELETE_CONTACT", payload: data.id, navigate })} className="btn my-1" style={{ backgroundColor: colors.Red }}>
-            <i className="fa fa-trash w-100 h-100" style={{ backgroundColor: colors.Red }} />
+            <FaTrash />
           </button>
         </div>
       </div>
