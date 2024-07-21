@@ -19,9 +19,25 @@ body {
   color: #f8f8f2;
 }
 .form-control::placeholder {
-  color: #f8f8f2;
+  color: #f8f8f2c6;
 }
 a {
   text-decoration: none;
   transition: all 0.4s ease;
+}
+.close{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  transition: 0.5s;
+}
+.close:hover{
+  opacity: 0.5;
+}
+.adsign{
+  background-color: #48557c;
+  border-color: #bd93f9;
+  
+  color: white;
 }

@@ -4,7 +4,7 @@ const NotFound = ({ textValue }) => {
     return (
         <div className="text-center py-5" style={{ backgroundColor: colors.CurrentLine }}>
             <h2 style={{ color: colors.Orange }}>{textValue}</h2>
-            <img src={notFound} alt="not found" className="w-25" />
+            <img src={notFound} alt="not found" className="w-50" />
         </div>
     )
 }
