@@ -1,5 +1,5 @@
 {
-  "homepage" : "http://Parsa-mh.github.io/manage-users",
+  "homepage": "http://Parsa-mh.github.io/manage-users",
   "name": "product-name-card",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
-    "gh-pages": "^6.1.1",
     "json-server": "^1.0.0-alpha.23",
     "ldrs": "^1.0.1",
     "react": "^18.2.0",
@@ -26,8 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "db": "json-server --watch ./database/contacts.json"
   },
   "eslintConfig": {
@@ -47,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
